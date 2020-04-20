@@ -1,0 +1,35 @@
+#for this assignment we have 2 tasks: create the cache Matrix and create the cache solve for the first function
+#makeCacheMatrix
+makeCacheMatrix <- function(x = matrix()) 
+{
+inversion <- NULL
+setMatrix <- function(y) 
+  {x <<- y
+   inversion <<- NULL}
+  
+  #how do we access the matrix
+  get <- function() x
+  getInverse <- function() inversion
+  
+  #setting the matrix
+  setInverse <- function(newinversion) inv <<- newinversion
+  
+  #list of the returned functions
+  list(setMatrix = setMatrix, 
+       getMatrix = getMatrix,
+       setInverse = setInverse, 
+       getInverse = getInverse)
+ 
+}
+
+#cache solve for the first function
+cacheSolve <- <- function(x, ...)
+{
+        inv <- x$getinverse()
+                inv <- x$getinverse()
+if(is.null(inv)) 
+{data <- x$get()
+inv <- solve(data, ...)
+x$setInverse(inv)}
+inv
+}
